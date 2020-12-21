@@ -49,13 +49,15 @@ ROS
 ## zsh oh-my-zsh auto-suggestion
 sudo apt-get install zsh
 ### installl oh-my-zsh and auto-suggestion
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 或者$ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 ### 修改 .zshrc
+my theme is "af-magic"
+
 plugins=(
-  git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
+ git
+ zsh-autosuggestions
+ zsh-syntax-highlighting
 )
 source .zshrc
 
@@ -76,7 +78,7 @@ theme: /usr/share/themes 自己使用的是OSX-Arc-Shadow
 icons: /usr/share/icons  自己使用的是Numix-Circle
 shell: 
 
-
+link:https://github.com/asd2003asd/OSX-Arc-Shadow
 
 ## Terminator
 ### Install
@@ -93,7 +95,7 @@ sudo apt install terminator
   [[default]]
     palette = "#2d2d2d:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#d3d0c8:#747369:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#f2f0ec"
     background_color = "#2D2D2D" # 背景颜色
-    background_image = None  
+    background_image = None
     background_darkness = 0.85
     cursor_color = "#2D2D2D" # 光标颜色
     cursor_blink = True # 光标是否闪烁
@@ -133,20 +135,25 @@ sudo apt-get update
 ## V2ray and QV2ray
 git clone 
 sudo chmod +x ./Qv2ray-refs.tags.v1.99.6-linux.AppImage
-./Qv2ray-refs.tags.v1.99.6-linux.AppImage
+./Qv2ray-refs.tags.v1.99.6-linux.AppImage   
+
 
 
 
 ## Typora
+
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
+
 ### 添加仓库并更新
-sudo add-apt-repository ‘deb http://typora.io linux/’
+sudo add-apt-repository 'deb http://typora.io linux/'
 sudo apt-get update
 ### Install
 sudo apt-get install typora
 
 
 
+## aptitude
 
+sudo apt-get install aptitude
 
 
