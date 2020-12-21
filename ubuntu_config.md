@@ -157,3 +157,8 @@ sudo apt-get install typora
 sudo apt-get install aptitude
 
 
+
+## ubuntu_18.04 demphi
+
+link:
+
