@@ -2,14 +2,14 @@
 # ubuntu config
 by Demphi
 ## 更换source
-### 命令
-##### 首先备份源列表
+```bash
+# 首先备份源列表
 sudo cp /etc/apt/sources.list /etc/apt/sources.list_backup
-##### 权限
+# 权限
 sudo chmod 777 /etc/apt/sources.list
-##### 打开sources.list文件
+# 打开sources.list文件
 sudo gedit /etc/apt/sources.list
-##### 阿里源
+# 阿里源
 deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
 deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
 deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
@@ -20,59 +20,73 @@ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted univer
 deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
 deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
 deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-##### 刷新lists
-sudo apt-get update
+# 刷新lists
 sudo apt-get upgrade
 sudo apt-get install build-essential文件
+# 注意事项
 
-### 注意事项
+```
 
 
 
 ## google-chrome
+```bash
 sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
 sudo apt update
 sudo apt install google-chrome-stable
-
-
+```
 
 ## vscode
 downloads .deb 
 sudo dpkg -i *.deb
+
 ### install 插件
 
 ROS
 
+koroFileHeader
+
+Material Theme
+
+Chinese
+
 
 
 ## zsh oh-my-zsh auto-suggestion
+```bash
 sudo apt-get install zsh
-### installl oh-my-zsh and auto-suggestion
+# installl oh-my-zsh and auto-suggestion
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 或者$ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-### 修改 .zshrc
-my theme is "af-magic"
-
+# 修改 .zshrc
+# my theme is "af-magic"
 plugins=(
  git
  zsh-autosuggestions
  zsh-syntax-highlighting
 )
 source .zshrc
+```
 
 
 
 ## ranger/tree and neofetch 
+
+```bash
 sudo apt-get install neofetch
 sudo apt-get install ranger
+```
 
 
 
 ## gnome-tweak-tool
+
+```bash
 sudo apt-get install gnome-shell         #安装gnome桌面窗口管理程序
 sudo apt install gnome-tweak-tool        #安装管理工具
 sudo apt install gnome-shell-extensions  #扩展管理
+```
 
 theme: /usr/share/themes 自己使用的是OSX-Arc-Shadow
 icons: /usr/share/icons  自己使用的是Numix-Circle
@@ -80,7 +94,10 @@ shell:
 
 link:https://github.com/asd2003asd/OSX-Arc-Shadow
 
+
+
 ## Terminator
+
 ### Install
 sudo apt install terminator
 ### config
@@ -127,38 +144,94 @@ config 之后 需要执行 source .zshrc
 
 
 ### 18.04
+```bash
 sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt-get update
+```
 
 
 
 ## V2ray and QV2ray
-git clone 
+```bash
+git clone https://github.com/Dem-phi/v2ray-and-Qv2ray.git
 sudo chmod +x ./Qv2ray-refs.tags.v1.99.6-linux.AppImage
 ./Qv2ray-refs.tags.v1.99.6-linux.AppImage   
+```
 
 
 
 
 ## Typora
 
+```bash
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
-
-### 添加仓库并更新
+# 添加仓库并更新
 sudo add-apt-repository 'deb http://typora.io linux/'
 sudo apt-get update
-### Install
+# Install
 sudo apt-get install typora
+```
 
 
 
 ## aptitude
 
+```bash
 sudo apt-get install aptitude
+```
+
+
+
+## deepin-wine
+
+```bash
+git clone https://github.com/wszqkzqk/deepin-wine-ubuntu.git
+sudo ./intall.sh	#deepin-wine安装完成
+```
+
+qq基本上是用不了,一般用TIM
+
+### TIM
+
+下载对应的软件包 ,会出现TIM显示不料中文的情况
+1.下载字体(simsun.ttc)
+2.放在对应的文件夹下 /home/demphi/.deepinwine/Deepin-TIM/drive_c/windows/Fonts
+3.编写文件zh.reg
+
+```
+REGEDIT4
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]
+"Arial"="simsun"
+"Arial CE,238"="simsun"
+"Arial CYR,204"="simsun"
+"Arial Greek,161"="simsun"
+"Arial TUR,162"="simsun"
+"Courier New"="simsun"
+"Courier New CE,238"="simsun"
+"Courier New CYR,204"="simsun"
+"Courier New Greek,161"="simsun"
+"Courier New TUR,162"="simsun"
+"FixedSys"="simsun"
+"Helv"="simsun"
+"Helvetica"="simsun"
+"MS Sans Serif"="simsun"
+"MS Shell Dlg"="simsun"
+"MS Shell Dlg 2"="simsun"
+"System"="simsun"
+"Tahoma"="simsun"
+"Times"="simsun"
+"Times New Roman CE,238"="simsun"
+"Times New Roman CYR,204"="simsun"
+"Times New Roman Greek,161"="simsun"
+"Times New Roman TUR,162"="simsun"
+"Tms Rmn"="simsun"
+```
+
+4.在终端中输入 deepin-wine regedit zh.reg
 
 
 
 ## ubuntu_18.04 demphi
 
-link:
+link: https://github.com/Dem-phi/ubuntu_config.git
 
