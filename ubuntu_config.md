@@ -66,7 +66,13 @@ plugins=(
  zsh-autosuggestions
  zsh-syntax-highlighting
 )
-source .zshrc
+# add some shortcuts
+alias szs="source ~/.zshrc"
+alias sss="source devel/setup.zsh"
+alias ezs="gedit ~/.zshrc"
+# source
+sss	或者
+source ~/.zshrc
 ```
 
 
@@ -182,7 +188,7 @@ sudo apt-get install aptitude
 
 
 
-## deepin-wine
+## deepin-winest-stm32cubeide_1.3.0_5720_20200220_1053_amd64.deb_bundle.sh 
 
 ```bash
 git clone https://github.com/wszqkzqk/deepin-wine-ubuntu.git
@@ -214,11 +220,11 @@ REGEDIT4
 "FixedSys"="simsun"
 "Helv"="simsun"
 "Helvetica"="simsun"
-"MS Sans Serif"="simsun"
+"MS Sans Serif"="simsun"八十
 "MS Shell Dlg"="simsun"
 "MS Shell Dlg 2"="simsun"
 "System"="simsun"
-"Tahoma"="simsun"
+"Tahoma"="simsun"家
 "Times"="simsun"
 "Times New Roman CE,238"="simsun"
 "Times New Roman CYR,204"="simsun"
@@ -228,6 +234,65 @@ REGEDIT4
 ```
 
 4.在终端中输入 deepin-wine regedit zh.reg
+
+### QQ Music
+
+
+
+## stm32cubemx
+
+### JAVA环境
+
+```bash
+# STM32CubeMX安装前需要有java环境，因此需要提前安装。
+sudo apt-get install default-jre
+```
+
+### stlink
+
+```bash
+
+```
+
+### STM32cubeMX
+
+```bash
+#下载STM32cubeMX
+# http://www.st.com/content/st_com/zh/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-configurators-and-code-generators/stm32cubemx.html
+#解压之后有四个文件，打开Readme.html，根据流程安装即可
+#installation directory of stm32cubemx is /usr/local/STMicroelectronics/STM32Cube/STM32CubeMX
+# run cubeMX
+cd /usr/local/STMicroelectronics/STM32Cube/STM32CubeMX
+./STM32CubeMX
+```
+
+```bash
+#可以创建一个bash脚本
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          STM32cubeMX.sh
+# Required-start:    $local_fs $remote_fs $network $syslog
+# Required-Stop:     $local_fs $remote_fs $network $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: starts the cubeMX
+### END INIT INFO
+
+cd /usr/local/STMicroelectronics/STM32Cube/STM32CubeMX
+setsid ./STM32CubeMX&
+
+# exit 0
+```
+
+### STM32cubeIDE
+
+```bash
+#下载STM32cubeIDE
+#到st官网下载即可，解压之后打开文件夹
+sudo chmod +x st-stm32cubeide_1.5.1_9029_20201210_1234_amd64.deb_bundle.sh
+sudo ./st-stm32cubeide_1.5.1_9029_20201210_1234_amd64.deb_bundle.sh
+# 耐心按回车（Enter），因为最后会让我们选择接受ST的License，不然的话，会因为我们不接受证书而退出，并提示：License NOT accepted. Not installing software. Hit return to exit.
+```
 
 
 
