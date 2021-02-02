@@ -1,2 +1,4 @@
 # ubuntu_config
-重装ubuntu之后的一般配置 demphi
+ubuntu的一般配置 
+include vscode STM32cubeMX etc.
+by demphi
